@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>孔孟小學堂 | 經典傳承 · 寓教於樂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #FF6B35;
+  --teal:   #00C9B1;
+  --yellow: #FFB800;
+  --purple: #9B5DE5;
+  --pink:   #FF4B6E;
+  --blue:   #3A86FF;
+  --green:  #4CC764;
+  --ink:    #2D2926;
+  --muted:  #6B6460;
+  --bg:     #FFFDF7;
+  --white:  #FFFFFF;
+  --card-r: 24px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Nunito", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(255,253,247,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid #F0E8D8;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 5%; height: 60px;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-weight: 900; font-size: 1.1rem; color: var(--orange);
+}
+.nav-brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--yellow); display: inline-block; }
+nav ul { list-style: none; display: flex; gap: 1.5rem; }
+nav ul a {
+  color: var(--muted); text-decoration: none; font-size: 0.85rem;
+  font-weight: 700; padding: 0.25em 0.6em; border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+nav ul a:hover { background: var(--orange); color: #fff; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #FF8C5A 0%, #FF6B35 40%, #FF4B6E 100%);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 100px 5% 80px;
+  position: relative; overflow: hidden;
+}
+/* floating circles deco */
+#hero .deco { position: absolute; border-radius: 50%; opacity: 0.18; pointer-events: none; }
+#hero .deco-1 { width: 320px; height: 320px; background: #FFB800; top: -80px; left: -80px; }
+#hero .deco-2 { width: 200px; height: 200px; background: #fff; bottom: 60px; right: -40px; }
+#hero .deco-3 { width: 120px; height: 120px; background: #9B5DE5; top: 30%; left: 8%; }
+#hero .deco-4 { width: 80px; height: 80px; background: #00C9B1; bottom: 15%; left: 20%; }
+#hero .deco-5 { width: 60px; height: 60px; background: #FFB800; top: 20%; right: 12%; }
+
+.hero-chip {
+  background: rgba(255,255,255,0.25);
+  color: #fff; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.12em; padding: 0.4em 1.2em;
+  border-radius: 100px; border: 1.5px solid rgba(255,255,255,0.5);
+  margin-bottom: 1.5rem; position: relative; z-index: 1;
+}
+.hero-title {
+  font-size: clamp(4rem, 12vw, 8rem);
+  color: #fff; font-weight: 900;
+  letter-spacing: 0.2em; line-height: 1;
+  text-shadow: 0 6px 24px rgba(180,40,0,0.25);
+  position: relative; z-index: 1;
+}
+.hero-sub {
+  margin-top: 1.2rem;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: rgba(255,255,255,0.9); font-weight: 700;
+  letter-spacing: 0.15em; position: relative; z-index: 1;
+}
+.hero-info {
+  margin-top: 1rem;
+  font-size: 0.88rem; color: rgba(255,255,255,0.75);
+  position: relative; z-index: 1;
+}
+.hero-btns {
+  margin-top: 2.5rem; display: flex; gap: 1rem;
+  justify-content: center; flex-wrap: wrap;
+  position: relative; z-index: 1;
+}
+.btn {
+  font-family: inherit; font-weight: 800; font-size: 0.95rem;
+  padding: 0.75em 2em; border-radius: 100px; border: none;
+  cursor: pointer; text-decoration: none; display: inline-block;
+  letter-spacing: 0.05em; transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+.btn-white { background: #fff; color: var(--orange); }
+.btn-outline-w { background: transparent; color: #fff; border: 2.5px solid #fff; }
+
+/* wave divider */
+.wave { display: block; width: 100%; margin-bottom: -2px; }
+
+/* ── SECTION COMMONS ── */
+section { padding: 80px 5%; }
+.sec-chip {
+  display: inline-block;
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.15em;
+  padding: 0.3em 1em; border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+.sec-title {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 900; margin-bottom: 0.75rem; letter-spacing: 0.05em;
+}
+.sec-desc {
+  max-width: 640px; margin: 0 auto 3rem;
+  color: var(--muted); font-size: 0.95rem; line-height: 1.9;
+}
+.text-center { text-align: center; }
+
+/* ── PROBLEMS ── */
+#problems { background: #FFF5F0; }
+.chip-orange { background: #FFE5D9; color: var(--orange); }
+.problems-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1.5rem; max-width: 960px; margin: 0 auto;
+}
+.prob-card {
+  background: #fff; border-radius: var(--card-r);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 4px 20px rgba(255,107,53,0.08);
+  border: 2px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.prob-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(255,107,53,0.15); border-color: var(--orange); }
+.prob-icon-wrap {
+  width: 56px; height: 56px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; margin-bottom: 1rem;
+}
+.prob-card:nth-child(1) .prob-icon-wrap { background: #FFE5D9; }
+.prob-card:nth-child(2) .prob-icon-wrap { background: #E8F8F6; }
+.prob-card:nth-child(3) .prob-icon-wrap { background: #EEE6FC; }
+.prob-neg {
+  font-size: 1.05rem; font-weight: 900;
+  color: var(--orange); margin-bottom: 0.6rem;
+}
+.prob-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.85; }
+
+/* ── ORIGIN ── */
+#origin { background: #F0FDFB; }
+.chip-teal { background: #CCFAF4; color: #008A7B; }
+.origin-quote {
+  max-width: 680px; margin: 0 auto 2.5rem;
+  background: #fff; border-radius: var(--card-r);
+  padding: 1.75rem 2rem;
+  border-left: 6px solid var(--teal);
+  font-size: 1.02rem; color: var(--ink); line-height: 2;
+  box-shadow: 0 4px 20px rgba(0,201,177,0.1);
+}
+.methods-grid {
+  display: grid; grid-template-columns: repeat(2,1fr);
+  gap: 1.25rem; max-width: 600px; margin: 0 auto;
+}
+@media(min-width:600px){ .methods-grid { grid-template-columns: repeat(4,1fr); max-width:900px; } }
+.method-card {
+  background: #fff; border-radius: var(--card-r);
+  padding: 1.75rem 1rem; text-align: center;
+  box-shadow: 0 4px 16px rgba(0,201,177,0.08);
+  transition: transform 0.2s;
+}
+.method-card:hover { transform: translateY(-5px); }
+.method-card .micon {
+  font-size: 2.4rem; margin-bottom: 0.5rem;
+  display: block;
+}
+.method-card .mname { font-size: 0.95rem; font-weight: 800; color: var(--ink); }
+
+/* ── GOALS ── */
+#goals { background: #FDFFF5; }
+.chip-green { background: #DDFBE6; color: #2E8A4A; }
+.goals-grid {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1.5rem; max-width: 960px; margin: 0 auto;
+}
+.goal-card {
+  border-radius: var(--card-r); padding: 2rem 1.75rem;
+  color: #fff; position: relative; overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
+}
+.goal-card:hover { transform: translateY(-6px); }
+.goal-card::after {
+  content: ""; position: absolute;
+  width: 140px; height: 140px; border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  bottom: -40px; right: -30px;
+}
+.goal-card:nth-child(1) { background: linear-gradient(135deg, #FF6B35, #FF4B6E); }
+.goal-card:nth-child(2) { background: linear-gradient(135deg, #00C9B1, #3A86FF); }
+.goal-card:nth-child(3) { background: linear-gradient(135deg, #9B5DE5, #FF4B6E); }
+.goal-num {
+  font-size: 3rem; font-weight: 900; opacity: 0.2;
+  line-height: 1; margin-bottom: 0.5rem;
+}
+.goal-layer { font-size: 0.72rem; font-weight: 700; opacity: 0.8; letter-spacing: 0.15em; margin-bottom: 0.25rem; }
+.goal-name { font-size: 1.4rem; font-weight: 900; margin-bottom: 0.75rem; }
+.goal-card p { font-size: 0.88rem; opacity: 0.9; line-height: 1.85; }
+
+/* ── INFO ── */
+#info { background: var(--yellow); }
+#info .sec-title { color: #2D2926; }
+.chip-yellow { background: rgba(255,255,255,0.5); color: #7A5000; }
+.info-grid {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 1.25rem; max-width: 900px; margin: 0 auto;
+}
+.info-card {
+  background: #fff; border-radius: var(--card-r);
+  padding: 1.75rem 1.25rem; text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+.info-card:hover { transform: translateY(-4px); }
+.info-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+.info-label { font-size: 0.7rem; font-weight: 800; color: var(--orange); letter-spacing: 0.15em; margin-bottom: 0.4rem; }
+.info-value { font-size: 0.9rem; font-weight: 700; color: var(--ink); line-height: 1.7; }
+
+/* ── SCHEDULE ── */
+#schedule { background: #F5F0FF; }
+.chip-purple { background: #EDE0FF; color: #6A3DB8; }
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px,1fr));
+  gap: 1.25rem; max-width: 1000px; margin: 0 auto;
+}
+.day-card {
+  border-radius: var(--card-r); padding: 1.75rem 1.25rem;
+  color: #fff; display: flex; flex-direction: column;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.day-card:hover { transform: translateY(-6px); box-shadow: 0 14px 36px rgba(0,0,0,0.18); }
+.day-card:nth-child(1) { background: linear-gradient(145deg, #FF8C5A, #FF6B35); }
+.day-card:nth-child(2) { background: linear-gradient(145deg, #00D9C0, #00C9B1); }
+.day-card:nth-child(3) { background: linear-gradient(145deg, #FFD23F, #FFB800); color: #2D2926; }
+.day-card:nth-child(4) { background: linear-gradient(145deg, #B47FFF, #9B5DE5); }
+.day-card:nth-child(5) { background: linear-gradient(145deg, #FF7096, #FF4B6E); }
+.day-card:nth-child(3) .day-tag,
+.day-card:nth-child(3) .day-venue { color: rgba(45,41,38,0.65); }
+.day-badge {
+  display: inline-block; background: rgba(255,255,255,0.3);
+  border-radius: 100px; font-size: 0.7rem; font-weight: 800;
+  padding: 0.2em 0.8em; margin-bottom: 0.75rem; align-self: flex-start;
+}
+.day-num { font-size: 1.4rem; font-weight: 900; }
+.day-theme {
+  font-size: 2.2rem; font-weight: 900; margin: 0.5rem 0 0.25rem;
+  opacity: 0.25; line-height: 1;
+}
+.day-tag { font-size: 0.72rem; font-weight: 700; opacity: 0.8; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+.day-title { font-size: 0.95rem; font-weight: 800; line-height: 1.5; flex: 1; }
+.day-venue { font-size: 0.75rem; font-weight: 700; opacity: 0.75; margin-top: 0.75rem; }
+
+/* ── FACULTY ── */
+#faculty { background: #FFF8F5; }
+.chip-pink { background: #FFE0E8; color: #C0234A; }
+.faculty-grid {
+  display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 1.5rem; max-width: 1000px; margin: 0 auto 2rem;
+}
+.fac-card {
+  background: #fff; border-radius: var(--card-r);
+  padding: 2rem 1.5rem; text-align: center;
+  box-shadow: 0 4px 20px rgba(255,75,110,0.08);
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.fac-card:hover { transform: translateY(-5px); border-color: var(--pink); }
+.fac-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; font-weight: 900; color: #fff;
+  margin: 0 auto 1rem;
+}
+.fac-card:nth-child(1) .fac-avatar { background: linear-gradient(135deg,#FF6B35,#FF4B6E); }
+.fac-card:nth-child(2) .fac-avatar { background: linear-gradient(135deg,#00C9B1,#3A86FF); }
+.fac-card:nth-child(3) .fac-avatar { background: linear-gradient(135deg,#9B5DE5,#FF4B6E); }
+.fac-card:nth-child(4) .fac-avatar { background: linear-gradient(135deg,#FFB800,#FF6B35); }
+.fac-name { font-size: 1.05rem; font-weight: 900; margin-bottom: 0.25rem; }
+.fac-role {
+  display: inline-block; font-size: 0.72rem; font-weight: 800;
+  background: #FFE0E8; color: var(--pink);
+  padding: 0.2em 0.7em; border-radius: 100px; margin-bottom: 0.6rem;
+}
+.fac-affil { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+.team-banner {
+  max-width: 680px; margin: 0 auto;
+  background: linear-gradient(135deg, #9B5DE5, #FF4B6E);
+  color: #fff; border-radius: var(--card-r);
+  padding: 1.5rem 2rem; text-align: center;
+  font-size: 0.92rem; font-weight: 700; line-height: 1.8;
+}
+.team-banner span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+
+/* ── FEATURES ── */
+#features { background: #F0FDFB; }
+.chip-blue { background: #DAEEFF; color: #1A5FAD; }
+.features-wrap { max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+.feat-block {
+  background: #fff; border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s;
+}
+.feat-block:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.13); }
+.feat-body { padding: 2rem 2.5rem; }
+.feat-tag {
+  display: inline-block; font-size: 0.72rem; font-weight: 800;
+  padding: 0.25em 0.8em; border-radius: 100px; margin-bottom: 0.75rem;
+}
+.feat-block:nth-child(1) .feat-tag { background: #CCFAF4; color: #008A7B; }
+.feat-block:nth-child(2) .feat-tag { background: #FFF3CC; color: #8A6000; }
+.feat-block:nth-child(3) .feat-tag { background: #FFE0E8; color: #C0234A; }
+.feat-block:nth-child(4) .feat-tag { background: #EDE0FF; color: #6A3DB8; }
+.feat-title { font-size: 1.3rem; font-weight: 900; margin-bottom: 0.75rem; color: var(--ink); }
+.feat-quote {
+  font-size: 0.88rem; color: var(--muted); font-style: italic;
+  background: #F8F8F8; border-radius: 12px; padding: 0.75rem 1rem;
+  margin-bottom: 1rem; line-height: 1.8;
+}
+.feat-text { font-size: 0.88rem; color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  font-size: 0.75rem; font-weight: 700;
+  padding: 0.3em 0.8em; border-radius: 100px;
+  background: #F0F0F0; color: var(--muted);
+}
+
+/* ── VENUES ── */
+#venues { background: #FFF5F0; }
+.venues-grid {
+  display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap: 1.25rem; max-width: 960px; margin: 0 auto;
+}
+.venue-card {
+  background: #fff; border-radius: var(--card-r);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(255,107,53,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.venue-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(255,107,53,0.15); }
+.venue-top {
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.venue-card:nth-child(1) .venue-top { background: #FFF0EB; }
+.venue-card:nth-child(2) .venue-top { background: #EBF9F7; }
+.venue-card:nth-child(3) .venue-top { background: #FFFAE8; }
+.venue-card:nth-child(4) .venue-top { background: #F0EEFF; }
+.venue-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; flex-shrink: 0;
+}
+.venue-card:nth-child(1) .venue-icon { background: var(--orange); }
+.venue-card:nth-child(2) .venue-icon { background: var(--teal); }
+.venue-card:nth-child(3) .venue-icon { background: var(--yellow); }
+.venue-card:nth-child(4) .venue-icon { background: var(--purple); }
+.venue-meta .venue-when { font-size: 0.7rem; font-weight: 800; color: var(--muted); letter-spacing: 0.1em; }
+.venue-meta .venue-name { font-size: 1rem; font-weight: 900; color: var(--ink); }
+.venue-body { padding: 1rem 1.5rem 1.5rem; font-size: 0.85rem; color: var(--muted); line-height: 1.8; }
+
+/* ── FOOTER ── */
+footer {
+  background: #2D2926; color: #A09080;
+  text-align: center; padding: 3rem 5%;
+}
+.footer-brand { font-size: 1.8rem; font-weight: 900; color: var(--yellow); margin-bottom: 0.5rem; }
+footer p { font-size: 0.85rem; line-height: 2; }
+.footer-dots { display: flex; gap: 0.4rem; justify-content: center; margin: 1.25rem 0; }
+.footer-dots span {
+  width: 8px; height: 8px; border-radius: 50%;
+}
+.footer-dots span:nth-child(1) { background: var(--orange); }
+.footer-dots span:nth-child(2) { background: var(--yellow); }
+.footer-dots span:nth-child(3) { background: var(--teal); }
+.footer-dots span:nth-child(4) { background: var(--purple); }
+.footer-dots span:nth-child(5) { background: var(--pink); }
+
+/* ── FADE IN ── */
+.fi { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.fi.on { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:680px) {
+  nav ul { display: none; }
+
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span class="dot"></span>孔孟小學堂
+  </div>
+  <ul>
+    <li><a href="#problems">背景</a></li>
+    <li><a href="#goals">目標</a></li>
+    <li><a href="#sel">SEL</a></li>
+    <li><a href="#schedule">行程</a></li>
+    <li><a href="#faculty">師資</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#recruit">招募</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="deco deco-1"></div>
+  <div class="deco deco-2"></div>
+  <div class="deco deco-3"></div>
+  <div class="deco deco-4"></div>
+  <div class="deco deco-5"></div>
+  <div class="hero-chip">🏛️ 中華孔孟學會</div>
+  <h1 class="hero-title">孔孟小學堂</h1>
+  <p class="hero-sub">經典傳承 &nbsp;·&nbsp; 寓教於樂</p>
+  <div class="hero-btns">
+    <a href="#info" class="btn btn-white">📅 活動資訊</a>
+    <a href="#schedule" class="btn btn-outline-w">查看五日行程 →</a>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FF6B35;margin-bottom:0;">
+  <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF5F0"/>
+</svg>
+
+<!-- PROBLEMS -->
+<section id="problems">
+  <div class="text-center fi">
+    <span class="sec-chip chip-orange">為何而做</span>
+    <h2 class="sec-title" style="color:var(--orange);">當代的三道文化困境 🤔</h2>
+    <p class="sec-desc">孔孟思想是華人文化的根，但在現代教育中，經典與孩子之間存在看不見的高牆。</p>
+  </div>
+  <div class="problems-grid fi">
+    <div class="prob-card">
+      <div class="prob-icon-wrap">📚</div>
+      <p class="prob-neg">經典 ≠ 童趣</p>
+      <p>《論語》《孟子》文字典雅，對國小生而言彷如天書，僅靠課本死背難以引發興趣。</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon-wrap">💬</div>
+      <p class="prob-neg">品德 ≠ 教條</p>
+      <p>傳統道德教育流於口號，孩子聽得多、感受得少，難以內化為真實的生活行動。</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon-wrap">🏮</div>
+      <p class="prob-neg">文化 ≠ 距離</p>
+      <p>孔孟思想是華人文化的根，若一代代失去親近感，珍貴的精神資產將逐漸流失。</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FFF5F0;">
+  <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#FDFFF5"/>
+</svg>
+
+<!-- GOALS -->
+<section id="goals">
+  <div class="text-center fi">
+    <span class="sec-chip chip-green">計畫目標</span>
+    <h2 class="sec-title" style="color:#2E8A4A;">知識 · 情意 · 實踐　三層並進 🚀</h2>
+    <p class="sec-desc">從認識到感受，從感受到行動——層遞式課程帶孩子真正走進經典世界。</p>
+  </div>
+  <div class="goals-grid fi">
+    <div class="goal-card">
+      <div class="goal-num">壹</div>
+      <p class="goal-layer">知識層面</p>
+      <p class="goal-name">認識經典 📖</p>
+      <p>認識孔子、孟子生平，藉由《論語》、《孟子》名言佳句，理解儒家核心概念：仁、義、禮、智。</p>
+    </div>
+    <div class="goal-card">
+      <div class="goal-num">貳</div>
+      <p class="goal-layer">情意層面</p>
+      <p class="goal-name">親近文化 💛</p>
+      <p>培養對傳統文化的好奇心與親切感，激發學員自主閱讀經典的興趣，讓文化不再遙遠。</p>
+    </div>
+    <div class="goal-card">
+      <div class="goal-num">參</div>
+      <p class="goal-layer">實踐層面</p>
+      <p class="goal-name">內化人格 🌟</p>
+      <p>透過分組合作、辯論與創作，將孔孟思想化為日常生活的行動指引，著重於人格塑造。</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FDFFF5;">
+  <path d="M0,30 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#E8F6FF"/>
+</svg>
+
+<!-- SEL -->
+<section id="sel" style="background:#E8F6FF;padding:80px 5%;">
+  <div class="text-center fi">
+    <span class="sec-chip" style="background:#CCE9FF;color:#1A5FAD;">🧠 為什麼與眾不同</span>
+    <h2 class="sec-title" style="color:var(--blue);">傳統經典 × 社會情緒學習（SEL）</h2>
+    <p class="sec-desc">孔孟不只是古書——他們是兩千年前最懂 SEL 的大師</p>
+  </div>
+
+  <!-- 主文案 -->
+  <div class="fi" style="max-width:760px;margin:0 auto 3rem;background:#fff;border-radius:var(--card-r);padding:2.5rem;box-shadow:0 4px 20px rgba(58,134,255,0.08);">
+    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
+      在這個「一睜開眼就被訊息轟炸」的時代，孩子的手機裡刷不完短影音，心裡卻塞滿了比較與焦慮。
+    </p>
+    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
+      大家都想知道怎麼幫孩子安頓身心，這才讓「社會情緒學習」成了現在最受重視的話題。但其實，兩千多年前的孔子與孟子，根本就是這方面的古董級大師！他們不談生硬的理論，只聊最貼心的日常——怎麼與自己好好相處、怎麼看待身邊的人，以及你想過上什麼樣的人生。
+    </p>
+    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
+      這一次，我們要把死板板的課文留給過去！帶孩子跨出教室，踏進孔廟、走讀植物園、動手玩創作。
+    </p>
+    <p style="font-size:1.02rem;font-weight:800;color:var(--blue);line-height:2;">
+      我們不教死記硬背的古人古事，而是要陪孩子在體驗中真正練習：覺察自我、好好感受、自信表達！
+    </p>
+  </div>
+
+  <!-- SEL 五大核心能力 -->
+  <div class="fi" style="max-width:760px;margin:0 auto;">
+    <p style="text-align:center;font-size:0.78rem;font-weight:800;color:#1A5FAD;letter-spacing:0.15em;margin-bottom:1.25rem;">SEL 五大核心能力</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-bottom:2rem;">
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🔍 自我覺察</span>
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">💚 情緒管理</span>
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🤝 人際合作</span>
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">⚖️ 負責任的決策</span>
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🎤 自信表達</span>
+    </div>
+    <div style="background:linear-gradient(135deg,#3A86FF,#00C9B1);border-radius:var(--card-r);padding:1.5rem 2rem;color:#fff;text-align:center;">
+      <p style="font-size:0.82rem;font-weight:800;opacity:0.85;letter-spacing:0.1em;margin-bottom:0.4rem;">政策背景</p>
+      <p style="font-size:0.95rem;font-weight:700;line-height:1.8;">2025 年教育部宣布將 SEL 精神納入十二年國教<br>中華孔孟學會率先以傳統經典呼應現代教育理論</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#E8F6FF;">
+  <path d="M0,30 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#FFB800"/>
+</svg>
+
+<!-- INFO -->
+<section id="info" style="padding-top:70px;padding-bottom:80px;">
+  <div class="text-center fi">
+    <span class="sec-chip chip-yellow">活動資訊</span>
+    <h2 class="sec-title">五日一夏，啟蒙小君子 ☀️</h2>
+  </div>
+  <div class="info-grid fi">
+    <div class="info-card">
+      <div class="info-icon">📅</div>
+      <p class="info-label">活動日期</p>
+      <p class="info-value">2026年<br>7/27（一）～ 7/31（五）</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🧒</div>
+      <p class="info-label">活動對象</p>
+      <p class="info-value">國小中年級至高年級<br>招收 30–36 名小學員</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🎓</div>
+      <p class="info-label">活動形式</p>
+      <p class="info-value">室內課程 × 戶外踏查<br>遊戲闖關 × 分組合作</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📍</div>
+      <p class="info-label">活動地點</p>
+      <p class="info-value">臺北市立大學 ‧ 大龍國小<br>孔廟 ‧ 植物園</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FFB800;">
+  <path d="M0,20 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F5F0FF"/>
+</svg>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="text-center fi">
+    <span class="sec-chip chip-purple">課程行程</span>
+    <h2 class="sec-title" style="color:var(--purple);">小君子養成之旅 🗓️</h2>
+    <p class="sec-desc">五天課程，從啟蒙到展現，每一天都是全新的文化探險！</p>
+  </div>
+  <div class="days-grid fi">
+    <div class="day-card">
+      <span class="day-badge">Day 1 · 7/27</span>
+      <div class="day-theme">啟</div>
+      <p class="day-tag">啟蒙</p>
+      <p class="day-title">孔子老師與他的學生天團</p>
+      <p class="day-venue">📍 臺北市立大學</p>
+    </div>
+    <div class="day-card">
+      <span class="day-badge">Day 2 · 7/28</span>
+      <div class="day-theme">明</div>
+      <p class="day-tag">明理</p>
+      <p class="day-title">誰偷走了牛山的頭髮？子曰中醫診所</p>
+      <p class="day-venue">📍 臺北市立大學 ‧ 植物園</p>
+    </div>
+    <div class="day-card">
+      <span class="day-badge">Day 3 · 7/29</span>
+      <div class="day-theme">體</div>
+      <p class="day-tag">體驗</p>
+      <p class="day-title">六藝巡禮</p>
+      <p class="day-venue">📍 臺北市孔廟</p>
+    </div>
+    <div class="day-card">
+      <span class="day-badge">Day 4 · 7/30</span>
+      <div class="day-theme">創</div>
+      <p class="day-tag">創作</p>
+      <p class="day-title">成語對對碰 ‧ 古詩吟誦 ‧ 小小寫手</p>
+      <p class="day-venue">📍 臺北市立大學</p>
+    </div>
+    <div class="day-card">
+      <span class="day-badge">Day 5 · 7/31</span>
+      <div class="day-theme">展</div>
+      <p class="day-tag">展現</p>
+      <p class="day-title">成果發表會</p>
+      <p class="day-venue">📍 臺北市立大學</p>
+    </div>
+  </div>
+
+  <!-- 詳細課表 tabs -->
+  <div class="fi" style="max-width:860px;margin:3rem auto 0;">
+    <p style="text-align:center;font-size:0.78rem;font-weight:800;color:#6A3DB8;letter-spacing:0.15em;margin-bottom:1.25rem;">📋 詳細課表</p>
+
+    <style>
+    .sched-tabs input[type=radio]{display:none;}
+    .sched-tab-labels{display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:0;}
+    .sched-tab-labels label{
+      padding:0.5em 1.2em;border-radius:100px 100px 0 0;font-size:0.82rem;font-weight:800;
+      cursor:pointer;border:2px solid transparent;border-bottom:none;
+      background:#fff;color:var(--muted);transition:background 0.15s,color 0.15s;
+    }
+    #st1:checked~.sched-tab-labels label[for=st1],
+    #st2:checked~.sched-tab-labels label[for=st2],
+    #st3:checked~.sched-tab-labels label[for=st3],
+    #st4:checked~.sched-tab-labels label[for=st4],
+    #st5:checked~.sched-tab-labels label[for=st5]{color:#fff;border-color:transparent;}
+    #st1:checked~.sched-tab-labels label[for=st1]{background:var(--orange);}
+    #st2:checked~.sched-tab-labels label[for=st2]{background:var(--teal);}
+    #st3:checked~.sched-tab-labels label[for=st3]{background:#D4A800;color:#fff;}
+    #st4:checked~.sched-tab-labels label[for=st4]{background:var(--purple);}
+    #st5:checked~.sched-tab-labels label[for=st5]{background:var(--pink);}
+    .sched-panels>div{display:none;background:#fff;border-radius:0 16px 16px 16px;padding:0;overflow:hidden;box-shadow:0 4px 20px rgba(155,93,229,0.1);}
+    #st1:checked~.sched-panels>.sp1,
+    #st2:checked~.sched-panels>.sp2,
+    #st3:checked~.sched-panels>.sp3,
+    #st4:checked~.sched-panels>.sp4,
+    #st5:checked~.sched-panels>.sp5{display:block;}
+    .sched-day-header{padding:1rem 1.5rem;color:#fff;font-size:0.82rem;font-weight:800;}
+    #st1:checked~.sched-panels>.sp1 .sched-day-header{background:var(--orange);}
+    #st2:checked~.sched-panels>.sp2 .sched-day-header{background:var(--teal);}
+    #st3:checked~.sched-panels>.sp3 .sched-day-header{background:#D4A800;}
+    #st4:checked~.sched-panels>.sp4 .sched-day-header{background:var(--purple);}
+    #st5:checked~.sched-panels>.sp5 .sched-day-header{background:var(--pink);}
+    .sched-row{display:grid;grid-template-columns:110px 1fr;gap:0;border-bottom:1px solid #F0EAF8;}
+    .sched-row:last-child{border-bottom:none;}
+    .sched-row:hover{background:#FAF7FF;}
+    .sched-time{padding:0.85rem 1rem;font-size:0.75rem;font-weight:800;color:var(--muted);border-right:2px solid #F0EAF8;white-space:nowrap;}
+    .sched-content{padding:0.85rem 1.25rem;}
+    .sched-act{font-size:0.88rem;font-weight:800;color:var(--ink);margin-bottom:0.15rem;}
+    .sched-desc{font-size:0.8rem;color:var(--muted);line-height:1.6;}
+    .sched-rest .sched-act{color:var(--muted);font-weight:700;}
+    .sched-lunch .sched-act{color:#D4A800;}
+    </style>
+
+    <div class="sched-tabs">
+      <input type="radio" name="sched" id="st1" checked>
+      <input type="radio" name="sched" id="st2">
+      <input type="radio" name="sched" id="st3">
+      <input type="radio" name="sched" id="st4">
+      <input type="radio" name="sched" id="st5">
+      <div class="sched-tab-labels">
+        <label for="st1">Day 1 啟蒙</label>
+        <label for="st2">Day 2 明理</label>
+        <label for="st3">Day 3 體驗</label>
+        <label for="st4">Day 4 創作</label>
+        <label for="st5">Day 5 展現</label>
+      </div>
+      <div class="sched-panels">
+
+        <!-- Day 1 -->
+        <div class="sp1">
+          <div class="sched-day-header">📍 臺北市立大學</div>
+          <div class="sched-row"><div class="sched-time">08:30–09:00</div><div class="sched-content"><p class="sched-act">報到集合</p><p class="sched-desc">領取營隊手冊，認識新朋友</p></div></div>
+          <div class="sched-row"><div class="sched-time">09:00–10:10</div><div class="sched-content"><p class="sched-act">開幕禮儀</p><p class="sched-desc">學習傳統的拱手禮，揭開五日「小君子養成之旅」</p></div></div>
+          <div class="sched-row sched-rest"><div class="sched-time">10:10–10:30</div><div class="sched-content"><p class="sched-act">休息時間</p></div></div>
+          <div class="sched-row"><div class="sched-time">10:30–12:00</div><div class="sched-content"><p class="sched-act">破冰大集合</p><p class="sched-desc">透過趣味遊戲與同組的小夥伴們培養默契</p></div></div>
+          <div class="sched-row sched-lunch"><div class="sched-time">12:00–13:30</div><div class="sched-content"><p class="sched-act">🍱 午餐時間</p></div></div>
+          <div class="sched-row"><div class="sched-time">13:30–16:30</div><div class="sched-content"><p class="sched-act">孔子老師與他的學生天團</p><p class="sched-desc">藉由《論語》小故事，走進至聖先師的精神世界，搭配主題遊戲，在玩中學習</p></div></div>
+          <div class="sched-row sched-rest"><div class="sched-time">16:30–16:50</div><div class="sched-content"><p class="sched-act">休息時間</p></div></div>
+          <div class="sched-row"><div class="sched-time">16:50–17:30</div><div class="sched-content"><p class="sched-act">溫故知新</p><p class="sched-desc">回顧今日所學，寫下學習日誌；分享今日最喜歡的一句話</p></div></div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="sp2">
+          <div class="sched-day-header">📍 臺北市立大學（上午）· 植物園（下午）</div>
+          <div class="sched-row"><div class="sched-time">09:00–09:30</div><div class="sched-content"><p class="sched-act">晨間暖身</p><p class="sched-desc">複習前日所學的拱手禮，迎接新的一天</p></div></div>
+          <div class="sched-row"><div class="sched-time">09:30–10:30</div><div class="sched-content"><p class="sched-act">誰偷走了牛山的頭髮？</p><p class="sched-desc">藉由《孟子》小故事，認識四端之心（仁、義、禮、智）</p></div></div>
+          <div class="sched-row sched-rest"><div class="sched-time">10:30–10:50</div><div class="sched-content"><p class="sched-act">休息時間</p></div></div>
+          <div class="sched-row"><div class="sched-time">10:50–12:00</div><div class="sched-content"><p class="sched-act">致未來的我 ✉️</p><p class="sched-desc">以彩繪暈染、毛筆書法等美術技巧，為未來的自己製作明信片並寄出</p></div></div>
+          <div class="sched-row sched-lunch"><div class="sched-time">12:00–13:30</div><div class="sched-content"><p class="sched-act">🍱 午餐時間</p></div></div>
+          <div class="sched-row"><div class="sched-time">13:30–17:00</div><div class="sched-content"><p class="sched-act">子曰中醫診所 🌿（戶外）</p><p class="sched-desc">化身小小扁鵲，跟著小隊輔走進植物園，為現代生活的種種疑難雜症開藥找藥</p></div></div>
+          <div class="sched-row"><div class="sched-time">17:00–17:30</div><div class="sched-content"><p class="sched-act">溫故知新</p><p class="sched-desc">回顧今日所學，寫下學習日誌；分享今日最喜歡的一句話</p></div></div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="sp3">
+          <div class="sched-day-header">📍 臺北市孔廟（全日戶外）</div>
+          <div class="sched-row"><div class="sched-time">09:00–12:00</div><div class="sched-content"><p class="sched-act">六藝巡禮（上）👘</p><p class="sched-desc">走進孔廟，穿上漢服，從「禮、樂、射、御、書、數」開始一日小君子的體驗</p></div></div>
+          <div class="sched-row sched-lunch"><div class="sched-time">12:00–13:30</div><div class="sched-content"><p class="sched-act">🍱 午餐時間（大龍國小用餐）</p></div></div>
+          <div class="sched-row"><div class="sched-time">13:30–16:30</div><div class="sched-content"><p class="sched-act">六藝巡禮（下）</p><p class="sched-desc">接續上午的體驗活動，認識古人的學習生活</p></div></div>
+          <div class="sched-row"><div class="sched-time">16:30–17:00</div><div class="sched-content"><p class="sched-act">溫故知新</p><p class="sched-desc">回顧今日所學，寫下學習日誌；分享今日最喜歡的一句話</p></div></div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="sp4">
+          <div class="sched-day-header">📍 臺北市立大學</div>
+          <div class="sched-row"><div class="sched-time">09:00–09:30</div><div class="sched-content"><p class="sched-act">晨間暖身</p><p class="sched-desc">複習前日所學的拱手禮，迎接新的一天</p></div></div>
+          <div class="sched-row"><div class="sched-time">09:30–10:30</div><div class="sched-content"><p class="sched-act">成語對對碰</p></div></div>
+          <div class="sched-row sched-rest"><div class="sched-time">10:30–10:50</div><div class="sched-content"><p class="sched-act">休息時間</p></div></div>
+          <div class="sched-row"><div class="sched-time">10:50–12:00</div><div class="sched-content"><p class="sched-act">古詩吟誦 🎵</p><p class="sched-desc">學習古詩的吟唱、朗誦技巧，體會傳統古樂的美妙</p></div></div>
+          <div class="sched-row sched-lunch"><div class="sched-time">12:00–13:30</div><div class="sched-content"><p class="sched-act">🍱 午餐時間</p></div></div>
+          <div class="sched-row"><div class="sched-time">13:30–16:30</div><div class="sched-content"><p class="sched-act">小小寫手 ✍️</p><p class="sched-desc">提筆寫下五日的所感所學，並籌備明日的成果發表</p></div></div>
+          <div class="sched-row"><div class="sched-time">16:30–17:30</div><div class="sched-content"><p class="sched-act">溫故知新</p><p class="sched-desc">回顧今日所學，寫下學習日誌；分享今日最喜歡的一句話</p></div></div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="sp5">
+          <div class="sched-day-header">📍 臺北市立大學</div>
+          <div class="sched-row"><div class="sched-time">09:00–12:00</div><div class="sched-content"><p class="sched-act">準備成發（上）</p><p class="sched-desc">由小隊輔帶領小君子們一起籌辦下午的成果發表</p></div></div>
+          <div class="sched-row sched-lunch"><div class="sched-time">12:00–13:30</div><div class="sched-content"><p class="sched-act">🍱 午餐時間</p></div></div>
+          <div class="sched-row"><div class="sched-time">13:30–16:30</div><div class="sched-content"><p class="sched-act">準備成發（下）</p><p class="sched-desc">最後的排練與彩排，準備迎接家長的到來</p></div></div>
+          <div class="sched-row"><div class="sched-time">16:30–17:30</div><div class="sched-content"><p class="sched-act">成果發表 🎉</p><p class="sched-desc">誠摯歡迎家長蒞臨，與小君子們共享經典學習的喜悅</p></div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- wave -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#F5F0FF;">
+  <path d="M0,40 C480,0 960,60 1440,20 L1440,60 L0,60 Z" fill="#FFF8F5"/>
+</svg>
+
+<!-- FACULTY -->
+<section id="faculty">
+  <div class="text-center fi">
+    <span class="sec-chip chip-pink">師資陣容</span>
+    <h2 class="sec-title" style="color:var(--pink);">理論與實務兼備 👩‍🏫</h2>
+    <p class="sec-desc">由師大教授與小學現場教師共同設計課程，學術深度與兒童適性兼顧。</p>
+  </div>
+  <div class="faculty-grid fi">
+    <div class="fac-card">
+      <div class="fac-avatar">金</div>
+      <p class="fac-name">金培懿 教授</p>
+      <span class="fac-role">特聘教授</span>
+      <p class="fac-affil">國立臺灣師範大學<br>國文學系</p>
+    </div>
+    <div class="fac-card">
+      <div class="fac-avatar">張</div>
+      <p class="fac-name">張崑將 教授</p>
+      <span class="fac-role">教授兼系主任</span>
+      <p class="fac-affil">國立臺灣師範大學<br>東亞學系</p>
+    </div>
+    <div class="fac-card">
+      <div class="fac-avatar">徐</div>
+      <p class="fac-name">徐國能 教授</p>
+      <span class="fac-role">教授兼系主任</span>
+      <p class="fac-affil">國立臺灣師範大學<br>國文學系</p>
+    </div>
+    <div class="fac-card">
+      <div class="fac-avatar">雅</div>
+      <p class="fac-name">曾雅青 老師</p>
+      <span class="fac-role">現場教師</span>
+      <p class="fac-affil">新北市新店區<br>雙峰國民小學</p>
+    </div>
+  </div>
+  <div class="team-banner fi">
+    <span>🎒</span>
+    師大國文系 服務團隊｜大學生全程隨隊陪伴，以小隊輔方式帶領各組活動
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FFF8F5;">
+  <path d="M0,20 C360,60 1080,10 1440,40 L1440,60 L0,60 Z" fill="#F0FDFB"/>
+</svg>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="text-center fi">
+    <span class="sec-chip chip-blue">特色體驗</span>
+    <h2 class="sec-title" style="color:var(--blue);">不只上課，更是體驗 ✨</h2>
+    <p class="sec-desc">四堂各具特色的精選課程，從戶外探索到創作表達，讓孩子在動手做中真正感受經典。</p>
+  </div>
+  <div class="features-wrap">
+    <div class="feat-block fi">
+      <div class="feat-body">
+        <span class="feat-tag">📍 臺北植物園 · Day 2 下午</span>
+        <h3 class="feat-title">化身小小扁鵲，走入自然找草藥</h3>
+        <p class="feat-quote">「君子之過也，如日月之食焉」</p>
+        <p class="feat-text">以《論語》《孟子》中對人格修養的觀察，比擬「現代生活的疑難雜症」，由小隊輔帶領走進臺北植物園，為焦慮、計較、自滿等現代病症開出文化處方。</p>
+        <div class="tags">
+          <span class="tag">🌿 子曰中醫診所</span>
+          <span class="tag">🔍 走入自然</span>
+          <span class="tag">👥 分組任務</span>
+          <span class="tag">📖 經典結合</span>
+        </div>
+      </div>
+    </div>
+    <div class="feat-block fi">
+      <div class="feat-body">
+        <span class="feat-tag">📍 臺北市孔廟 · Day 3 全日</span>
+        <h3 class="feat-title">身著漢服，一日小君子體驗</h3>
+        <p class="feat-quote">「志於道、據於德、依於仁、游於藝」</p>
+        <p class="feat-text">全員著漢服走入至聖先師奉祀地，從「禮、樂、射、御、書、數」六個面向逐一闖關，將文化情境化為穿在身上、走入生活的記憶。</p>
+        <div class="tags">
+          <span class="tag">👘 漢服扮裝</span>
+          <span class="tag">🏛️ 古意空間</span>
+          <span class="tag">🎯 六藝闖關</span>
+          <span class="tag">✨ 動手體驗</span>
+        </div>
+      </div>
+    </div>
+    <div class="feat-block fi">
+      <div class="feat-body">
+        <span class="feat-tag">✉️ 臺北市立大學 · Day 2 上午</span>
+        <h3 class="feat-title">暈染彩繪，寄一封信給未來的自己</h3>
+        <p class="feat-quote">「吾日三省吾身」</p>
+        <p class="feat-text">以彩繪暈染、毛筆書法等美術技巧，為未來的自己製作一張獨一無二的明信片，貼上郵票，親手寄出——讓孔孟的話語，成為送給未來自己的禮物。</p>
+        <div class="tags">
+          <span class="tag">🎨 彩繪暈染</span>
+          <span class="tag">🖌️ 毛筆書法</span>
+          <span class="tag">📮 寄給未來</span>
+          <span class="tag">💌 自我對話</span>
+        </div>
+      </div>
+    </div>
+    <div class="feat-block fi">
+      <div class="feat-body">
+        <span class="feat-tag">✍️ 臺北市立大學 · Day 4 下午</span>
+        <h3 class="feat-title">提起筆來，把這個夏天寫成故事</h3>
+        <p class="feat-quote">「知之為知之，不知為不知，是知也」</p>
+        <p class="feat-text">提筆寫下五日的所感所學，整理自己與經典相遇的故事。在文字中沉澱、回望，並籌備隔日的成果發表，讓每位孩子都成為自己這趟旅程的作者。</p>
+        <div class="tags">
+          <span class="tag">📝 學習日誌</span>
+          <span class="tag">🖊️ 創意寫作</span>
+          <span class="tag">💭 自我反思</span>
+          <span class="tag">🎤 籌備發表</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#F0FDFB;">
+  <path d="M0,40 C480,60 960,20 1440,50 L1440,60 L0,60 Z" fill="#FFF5F0"/>
+</svg>
+
+<!-- VENUES -->
+<section id="venues">
+  <div class="text-center fi">
+    <span class="sec-chip chip-orange">活動場地</span>
+    <h2 class="sec-title" style="color:var(--orange);">每天都是新冒險 🗺️</h2>
+    <p class="sec-desc">結合臺北市內四處各具特色的場域，讓每一天都有不同的文化探索體驗。</p>
+  </div>
+  <div class="venues-grid fi">
+    <div class="venue-card">
+      <div class="venue-top">
+        <div class="venue-icon">🏫</div>
+        <div class="venue-meta">
+          <p class="venue-when">主要場地 · Day 1,2,4,5</p>
+          <p class="venue-name">臺北市立大學</p>
+        </div>
+      </div>
+      <p class="venue-body">提供寬敞的教室與活動空間，作為五日營隊主要授課與成果發表的場域。</p>
+    </div>
+    <div class="venue-card">
+      <div class="venue-top">
+        <div class="venue-icon">🏛️</div>
+        <div class="venue-meta">
+          <p class="venue-when">戶外場域 · Day 3 全日</p>
+          <p class="venue-name">臺北市孔廟</p>
+        </div>
+      </div>
+      <p class="venue-body">至聖先師奉祀地，學員著漢服走入古意空間，於六藝情境中體驗古人的學習方式。</p>
+    </div>
+    <div class="venue-card">
+      <div class="venue-top">
+        <div class="venue-icon">🌿</div>
+        <div class="venue-meta">
+          <p class="venue-when">戶外場域 · Day 2 下午</p>
+          <p class="venue-name">臺北植物園</p>
+        </div>
+      </div>
+      <p class="venue-body">近距離接觸臺灣本土植物，化身「小小扁鵲」，將《論語》《孟子》與自然觀察結合。</p>
+    </div>
+    <div class="venue-card">
+      <div class="venue-top">
+        <div class="venue-icon">🏫</div>
+        <div class="venue-meta">
+          <p class="venue-when">用餐休憩 · Day 3</p>
+          <p class="venue-name">大龍國小</p>
+        </div>
+      </div>
+      <p class="venue-body">鄰近孔廟之百年小學，提供 Day 3 戶外活動之安心用餐與休憩支援。</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave into FAQ -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FFF5F0;">
+  <path d="M0,20 C360,55 1080,5 1440,35 L1440,60 L0,60 Z" fill="#F0F7FF"/>
+</svg>
+
+<!-- FAQ -->
+<section id="faq" style="background:#F0F7FF;padding:80px 5%;">
+  <div class="text-center fi">
+    <span class="sec-chip" style="background:#CCE9FF;color:#1A5FAD;">🙋 常見問題</span>
+    <h2 class="sec-title" style="color:var(--blue);">家長最想知道的事 FAQ</h2>
+    <p class="sec-desc">報名前有任何疑問？這裡一次解答。</p>
+  </div>
+
+  <div class="fi" style="max-width:760px;margin:0 auto;">
+<style>
+.faq-item { margin-bottom:0.75rem; }
+.faq-item input[type="checkbox"] { display:none; }
+.faq-label {
+  display:flex; justify-content:space-between; align-items:center;
+  background:#fff; border-radius:16px; padding:1.1rem 1.5rem;
+  cursor:pointer; font-weight:800; font-size:0.95rem; color:var(--ink);
+  box-shadow:0 2px 12px rgba(58,134,255,0.07);
+  border:2px solid transparent;
+  transition:border-color 0.15s, background 0.15s;
+  user-select:none;
+}
+.faq-label:hover { border-color:#3A86FF; }
+.faq-arrow { font-size:1.1rem; transition:transform 0.25s; flex-shrink:0; margin-left:1rem; }
+.faq-item input:checked ~ .faq-label { border-color:#3A86FF; background:#F0F7FF; }
+.faq-item input:checked ~ .faq-label .faq-arrow { transform:rotate(180deg); }
+.faq-body {
+  max-height:0; overflow:hidden;
+  transition:max-height 0.35s ease, padding 0.25s;
+  background:#fff; border-radius:0 0 16px 16px;
+  font-size:0.9rem; color:var(--muted); line-height:1.9;
+  padding:0 1.5rem;
+  margin-top:-8px; border:2px solid #3A86FF; border-top:none;
+}
+.faq-item input:checked ~ .faq-body { max-height:400px; padding:1rem 1.5rem 1.25rem; }
+</style>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq1">
+      <label class="faq-label" for="faq1">Q1．這個營隊和一般的讀經班或夏令營有什麼不一樣？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">2025 年教育部宣布將 SEL 精神納入十二年國教，本次活動以《論語》、《孟子》呼應 SEL 的五大核心能力——自我覺察、情緒管理、人際合作、負責任的決策與自信表達。我們不像讀經班要求孩子背誦，也不像夏令營只強調手作，而是把經典轉化為孩子生活中真正用得上的自我涵養。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq2">
+      <label class="faq-label" for="faq2">Q2．孩子完全沒讀過《論語》《孟子》，跟得上嗎？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">完全沒問題。所有課程都從故事與遊戲出發，假設孩子是「第一次認識孔孟」。經典基礎不是活動的入場券，而是五天結束後，孩子會帶走的禮物。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq3">
+      <label class="faq-label" for="faq3">Q3．SEL 是什麼？為什麼孩子需要？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">SEL（Social and Emotional Learning，社會情緒學習）是國際教育界積極推動的核心素養，涵蓋自我覺察、情緒管理、同理心、人際合作、負責任的決策等面向。這些能力，大小考試都不會考，卻會影響孩子一輩子。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq4">
+      <label class="faq-label" for="faq4">Q4．五天的課程會不會太密集？孩子能消化嗎？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">每日穿插室內課程、戶外踏查、手作活動與分組遊戲，動靜交替，並安排充足的午餐與休息時間。全程由隊輔陪伴，細心照顧孩子的情緒與體力。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq5">
+      <label class="faq-label" for="faq5">Q5．師資與隊輔是什麼背景？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">本次活動邀請國立臺灣師範大學國文系、東亞系的資深教授，以及資深國小現場教師共同研發與授課；隊輔則由師大國文系大學生服務團隊擔任，全程隨隊陪伴。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq6">
+      <label class="faq-label" for="faq6">Q6．孩子個性比較內向、慢熱，適合參加嗎？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">很適合。營隊採小組制，每組由固定隊輔帶領，孩子有充裕的時間慢慢熟悉同伴。課程也安排了「致未來的我」明信片彩繪、學習日誌、小小寫手等個人創作時段，讓不同性格的孩子都能找到自在表達的方式。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq7">
+      <label class="faq-label" for="faq7">Q7．孩子有過敏、特殊飲食或健康需求怎麼辦？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">報名表會請家長填寫詳細資料，營隊配有健護人員與基本急救包；午餐可依需求調整（素食、過敏原避免等），請於報名時註明。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq8">
+      <label class="faq-label" for="faq8">Q8．戶外日（植物園、孔廟）的安全怎麼把關？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">戶外日採小組制，每組由一位隊輔全程帶領；移動路線固定，並設有集合點，由攝影與健護同仁機動支援。遇大雨將啟動室內備案。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq9">
+      <label class="faq-label" for="faq9">Q9．每天的接送與到場時間怎麼安排？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">每日於上午集合報到、下午課程結束後解散，主場域臺北市立大學交通便利。Day 3 戶外日（孔廟）的集合與解散地點，將於行前說明會中另行公告，並提供詳細地圖與路線指引。</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq10">
+      <label class="faq-label" for="faq10">Q10．五天結束後，孩子會得到什麼？<span class="faq-arrow">▼</span></label>
+      <div class="faq-body">一份結業證書、一本五日學習日誌、一張寄給未來自己的明信片——以及更重要的：一群暑假的好朋友，和一個充實滿滿的夏天。🎉</div>
+    </div>
+  </div>
+</section>
+
+<!-- wave into recruit -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#F0F7FF;">
+  <path d="M0,30 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#1A1240"/>
+</svg>
+
+<!-- RECRUIT HERO -->
+<section id="recruit" style="background:linear-gradient(145deg,#1A1240 0%,#2E1A6E 50%,#9B5DE5 100%);padding:80px 5% 60px;text-align:center;">
+  <div class="fi">
+    <span class="sec-chip" style="background:rgba(255,255,255,0.15);color:#E0CFFF;margin-bottom:1rem;">🎒 工讀人員招募</span>
+    <h2 style="font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:#fff;letter-spacing:0.1em;margin-bottom:0.75rem;">以青春陪伴經典</h2>
+    <p style="font-size:clamp(1rem,2.5vw,1.3rem);color:rgba(255,255,255,0.8);font-weight:700;margin-bottom:0.5rem;">把文化遞給下一代</p>
+    <p style="font-size:0.95rem;color:rgba(255,255,255,0.6);max-width:580px;margin:0 auto 2rem;line-height:1.8;">「孔孟小學堂」誠摯邀請大學生夥伴加入，活潑、細心、熱忱比經驗更重要。最低需求 16–18 位，分四類職務，長短期皆有。</p>
+    <div style="display:inline-flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
+        <div style="font-size:2.2rem;font-weight:900;">16–18</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">位工讀生需求</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
+        <div style="font-size:2.2rem;font-weight:900;">4</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">類職務</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
+        <div style="font-size:2.2rem;font-weight:900;">5日</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">7/27 – 7/31</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section style="background:#F5F0FF;padding:80px 5%;">
+  <div class="text-center fi">
+    <span class="sec-chip chip-purple">職務介紹</span>
+    <h2 class="sec-title" style="color:var(--purple);">找到最適合你的位置 🌟</h2>
+    <p class="sec-desc">四類職務，各有特色，歡迎依照自己的專長與興趣選擇報名。</p>
+  </div>
+
+  <!-- 職務卡片 grid -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto;">
+
+    <!-- 隊輔 -->
+    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(155,93,229,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(155,93,229,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(155,93,229,0.1)'">
+      <div style="background:linear-gradient(135deg,#9B5DE5,#B47FFF);padding:1.5rem;color:#fff;">
+        <div style="font-size:2.2rem;margin-bottom:0.4rem;">👥</div>
+        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務一</div>
+        <div style="font-size:1.3rem;font-weight:900;">隊輔</div>
+        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">小君子們最親近的大哥哥、大姊姊</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <span style="background:#EDE0FF;color:#6A3DB8;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 5–6 位</span>
+          <span style="background:#EDE0FF;color:#6A3DB8;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
+        </div>
+        <div style="font-size:0.78rem;font-weight:800;color:var(--purple);margin-bottom:0.4rem;">理想特質</div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">活潑開朗、反應靈活，熱忱比經驗更重要。</p>
+        <div style="font-size:0.78rem;font-weight:800;color:var(--purple);margin-bottom:0.4rem;">工作內容</div>
+        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
+          <li>全程帶領分組學員，協助課程進行與秩序維持</li>
+          <li>引導分組合作、辯論、文字創作等活動</li>
+          <li>Day 2 帶組走進植物園「子曰中醫診所」</li>
+          <li>Day 5 陪伴學員籌備並完成成果發表</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 攝影健護勞務 -->
+    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(0,201,177,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(0,201,177,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,201,177,0.1)'">
+      <div style="background:linear-gradient(135deg,#00C9B1,#3A86FF);padding:1.5rem;color:#fff;">
+        <div style="font-size:2.2rem;margin-bottom:0.4rem;">📸</div>
+        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務二</div>
+        <div style="font-size:1.3rem;font-weight:900;">攝影 · 健護 · 勞務</div>
+        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">用鏡頭與行動，撐起整個營隊的後盾</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <span style="background:#CCFAF4;color:#008A7B;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 3–4 位</span>
+          <span style="background:#CCFAF4;color:#008A7B;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
+        </div>
+        <div style="font-size:0.78rem;font-weight:800;color:#008A7B;margin-bottom:0.4rem;">理想特質</div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">攝影技術佳，或體力、細心兼備。</p>
+        <div style="font-size:0.78rem;font-weight:800;color:#008A7B;margin-bottom:0.4rem;">工作內容</div>
+        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
+          <li>攝影：記錄五日課程花絮、活動側拍與結業典禮</li>
+          <li>健護：觀察學員身體狀況、基本傷口照護</li>
+          <li>勞務：場地佈置、物資搬運、報到引導</li>
+          <li>三項可依個人專長彈性分工、機動支援</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 主講與場控 -->
+    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(255,107,53,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(255,107,53,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(255,107,53,0.1)'">
+      <div style="background:linear-gradient(135deg,#FF6B35,#FF8C5A);padding:1.5rem;color:#fff;">
+        <div style="font-size:2.2rem;margin-bottom:0.4rem;">🎙️</div>
+        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務三</div>
+        <div style="font-size:1.3rem;font-weight:900;">主講與場控</div>
+        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">課堂的節奏掌舵者</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <span style="background:#FFE5D9;color:#B84010;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 2 位</span>
+          <span style="background:#FFE5D9;color:#B84010;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
+        </div>
+        <div style="font-size:0.78rem;font-weight:800;color:var(--orange);margin-bottom:0.4rem;">理想特質</div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">反應靈活、口條清楚、台風穩健。</p>
+        <div style="font-size:0.78rem;font-weight:800;color:var(--orange);margin-bottom:0.4rem;">工作內容</div>
+        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
+          <li>課間銜接：開場、轉場、節目串場</li>
+          <li>帶領明信片彩繪、成語對對碰、古詩吟誦等活動</li>
+          <li>Day 5 擔任成果發表會主持與流程控管</li>
+          <li>與授課講師密切配合，協助教具準備</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 關主 -->
+    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(255,183,0,0.12);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(255,183,0,0.2)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(255,183,0,0.12)'">
+      <div style="background:linear-gradient(135deg,#FFB800,#FF8C5A);padding:1.5rem;color:#2D2926;">
+        <div style="font-size:2.2rem;margin-bottom:0.4rem;">🏛️</div>
+        <div style="font-size:0.7rem;font-weight:800;opacity:0.65;letter-spacing:0.15em;margin-bottom:0.2rem;">職務四</div>
+        <div style="font-size:1.3rem;font-weight:900;">六藝大地遊戲關主</div>
+        <div style="font-size:0.82rem;opacity:0.7;margin-top:0.25rem;">唯一單日場 · 孔廟漢服體驗日</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <span style="background:#FFF3CC;color:#8A6000;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 6 位</span>
+          <span style="background:#FFF3CC;color:#8A6000;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 單日 7/29</span>
+        </div>
+        <div style="font-size:0.78rem;font-weight:800;color:#8A6000;margin-bottom:0.4rem;">理想特質</div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">活潑反應靈活，熟悉中華文化尤佳。</p>
+        <div style="font-size:0.78rem;font-weight:800;color:#8A6000;margin-bottom:0.4rem;">工作內容</div>
+        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
+          <li>分守「禮、樂、射、御、書、數」六個關卡</li>
+          <li>向身著漢服的學員講解該藝文化意涵並執行闖關</li>
+          <li>全員著漢服，一起走入「一日小君子」古意空間</li>
+          <li>活動前提供腳本道具及行前說明</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="background:linear-gradient(135deg,#2E1A6E,#9B5DE5);padding:70px 5%;text-align:center;">
+  <div class="fi">
+    <div style="font-size:2.5rem;margin-bottom:1rem;">📬</div>
+    <h2 style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;color:#fff;margin-bottom:0.5rem;">等你一起，成為小君子的引路人</h2>
+    <p style="color:rgba(255,255,255,0.75);font-size:0.95rem;margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.8;">對任何職務有疑問，或想了解更多，歡迎直接聯繫：</p>
+    <div style="display:inline-flex;flex-direction:column;gap:0.75rem;align-items:center;">
+      <div style="background:rgba(255,255,255,0.15);border-radius:16px;padding:0.9rem 2rem;color:#fff;font-size:0.95rem;font-weight:700;">
+        👤 王亭林　中華孔孟學會祕書
+      </div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+        <a href="mailto:edu.cmsct@gmail.com" style="background:#fff;color:#2E1A6E;border-radius:100px;padding:0.6em 1.5em;font-weight:800;font-size:0.9rem;text-decoration:none;transition:transform 0.15s;" onmouseenter="this.style.transform='translateY(-2px)'" onmouseleave="this.style.transform=''">✉️ edu.cmsct@gmail.com</a>
+        <a href="tel:0981388049" style="background:rgba(255,255,255,0.2);color:#fff;border:2px solid rgba(255,255,255,0.5);border-radius:100px;padding:0.6em 1.5em;font-weight:800;font-size:0.9rem;text-decoration:none;transition:transform 0.15s;" onmouseenter="this.style.transform='translateY(-2px)'" onmouseleave="this.style.transform=''">📞 0981-388049</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave into footer -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#9B5DE5;">
+  <path d="M0,20 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="#2D2926"/>
+</svg>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-brand">孔孟小學堂 🌟</p>
+  <p>經典傳承　·　寓教於樂</p>
+  <div class="footer-dots">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <p>主辦單位：中華孔孟學會</p>
+  <p style="margin-top:1.5rem;font-size:0.75rem;color:#5A4832;">© 2026 孔孟小學堂 · 中華孔孟學會</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
