@@ -512,13 +512,12 @@ footer p { font-size: 0.85rem; line-height: 2; }
     <span></span><span></span><span></span>
   </label>
   <ul>
-    <li><a href="#problems" onclick="document.getElementById('nav-toggle').checked=false">背景</a></li>
-    <li><a href="#goals" onclick="document.getElementById('nav-toggle').checked=false">目標</a></li>
-    <li><a href="#sel" onclick="document.getElementById('nav-toggle').checked=false">SEL</a></li>
+    <li><a href="#recruit" onclick="document.getElementById('nav-toggle').checked=false">招募</a></li>
+    <li><a href="#info" onclick="document.getElementById('nav-toggle').checked=false">活動資訊</a></li>
     <li><a href="#schedule" onclick="document.getElementById('nav-toggle').checked=false">行程</a></li>
     <li><a href="#faculty" onclick="document.getElementById('nav-toggle').checked=false">師資</a></li>
+    <li><a href="#features" onclick="document.getElementById('nav-toggle').checked=false">特色體驗</a></li>
     <li><a href="#faq" onclick="document.getElementById('nav-toggle').checked=false">FAQ</a></li>
-    <li><a href="#recruit" onclick="document.getElementById('nav-toggle').checked=false">招募</a></li>
   </ul>
 </nav>
 
@@ -538,119 +537,156 @@ footer p { font-size: 0.85rem; line-height: 2; }
   </div>
 </section>
 
-<!-- wave -->
+<!-- wave: Hero(#FF6B35) → RECRUIT HERO(#1A1240) -->
 <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FF6B35;margin-bottom:0;">
-  <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF5F0"/>
+  <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#1A1240"/>
 </svg>
 
-<!-- PROBLEMS -->
-<section id="problems">
-  <div class="text-center fi">
-    <span class="sec-chip chip-orange">為何而做</span>
-    <h2 class="sec-title" style="color:var(--orange);">當代的三道文化困境 🤔</h2>
-    <p class="sec-desc">孔孟思想是華人文化的根，但在現代教育中，經典與孩子之間存在看不見的高牆。</p>
-  </div>
-  <div class="problems-grid fi">
-    <div class="prob-card">
-      <div class="prob-icon-wrap">📚</div>
-      <p class="prob-neg">經典 ≠ 童趣</p>
-      <p>《論語》《孟子》文字典雅，對國小生而言彷如天書，僅靠課本死背難以引發興趣。</p>
-    </div>
-    <div class="prob-card">
-      <div class="prob-icon-wrap">💬</div>
-      <p class="prob-neg">品德 ≠ 教條</p>
-      <p>傳統道德教育流於口號，孩子聽得多、感受得少，難以內化為真實的生活行動。</p>
-    </div>
-    <div class="prob-card">
-      <div class="prob-icon-wrap">🏮</div>
-      <p class="prob-neg">文化 ≠ 距離</p>
-      <p>孔孟思想是華人文化的根，若一代代失去親近感，珍貴的精神資產將逐漸流失。</p>
+<!-- RECRUIT HERO -->
+<section id="recruit" style="background:linear-gradient(145deg,#1A1240 0%,#2E1A6E 50%,#9B5DE5 100%);padding:80px 5% 60px;text-align:center;">
+  <div class="fi">
+    <span class="sec-chip" style="background:rgba(255,255,255,0.15);color:#E0CFFF;margin-bottom:1rem;">🎒 工讀人員招募</span>
+    <h2 style="font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:#fff;letter-spacing:0.1em;margin-bottom:0.75rem;">以青春陪伴經典</h2>
+    <p style="font-size:clamp(1rem,2.5vw,1.3rem);color:rgba(255,255,255,0.8);font-weight:700;margin-bottom:0.5rem;">把文化遞給下一代</p>
+    <p style="font-size:0.95rem;color:rgba(255,255,255,0.6);max-width:580px;margin:0 auto 2rem;line-height:1.8;">「孔孟小學堂」誠摯邀請大學生夥伴加入，活潑、細心、熱忱比經驗更重要。最低需求 16–18 位，分四類職務，長短期皆有。</p>
+    <div class="recruit-stats" style="display:inline-flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
+        <div style="font-size:2.2rem;font-weight:900;">16–18</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">位工讀生需求</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
+        <div style="font-size:2.2rem;font-weight:900;">4</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">類職務</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
+        <div style="font-size:2.2rem;font-weight:900;">5日</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">7/27 – 7/31</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- wave -->
-<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FFF5F0;">
-  <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#FDFFF5"/>
+<!-- wave: RECRUIT HERO(#1A1240) → ROLES(#F5F0FF) -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#1A1240;">
+  <path d="M0,20 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="#F5F0FF"/>
 </svg>
 
-<!-- GOALS -->
-<section id="goals">
+<!-- ROLES -->
+<section style="background:#F5F0FF;padding:80px 5%;">
   <div class="text-center fi">
-    <span class="sec-chip chip-green">計畫目標</span>
-    <h2 class="sec-title" style="color:#2E8A4A;">知識 · 情意 · 實踐　三層並進 🚀</h2>
-    <p class="sec-desc">從認識到感受，從感受到行動——層遞式課程帶孩子真正走進經典世界。</p>
+    <span class="sec-chip chip-purple">職務介紹</span>
+    <h2 class="sec-title" style="color:var(--purple);">找到最適合你的位置 🌟</h2>
+    <p class="sec-desc">四類職務，各有特色，歡迎依照自己的專長與興趣選擇報名。</p>
   </div>
-  <div class="goals-grid fi">
-    <div class="goal-card">
-      <div class="goal-num">壹</div>
-      <p class="goal-layer">知識層面</p>
-      <p class="goal-name">認識經典 📖</p>
-      <p>認識孔子、孟子生平，藉由《論語》、《孟子》名言佳句，理解儒家核心概念：仁、義、禮、智。</p>
+
+  <!-- 職務卡片 grid -->
+  <div id="roles-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto;">
+
+    <!-- 隊輔 -->
+    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(155,93,229,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(155,93,229,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(155,93,229,0.1)'">
+      <div style="background:linear-gradient(135deg,#9B5DE5,#B47FFF);padding:1.5rem;color:#fff;">
+        <div style="font-size:2.2rem;margin-bottom:0.4rem;">👥</div>
+        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務一</div>
+        <div style="font-size:1.3rem;font-weight:900;">隊輔</div>
+        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">小君子們最親近的大哥哥、大姊姊</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <span style="background:#EDE0FF;color:#6A3DB8;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 5–6 位</span>
+          <span style="background:#EDE0FF;color:#6A3DB8;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
+        </div>
+        <div style="font-size:0.78rem;font-weight:800;color:var(--purple);margin-bottom:0.4rem;">理想特質</div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">活潑開朗、反應靈活，熱忱比經驗更重要。</p>
+        <div style="font-size:0.78rem;font-weight:800;color:var(--purple);margin-bottom:0.4rem;">工作內容</div>
+        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
+          <li>全程帶領分組學員，協助課程進行與秩序維持</li>
+          <li>引導分組合作、辯論、文字創作等活動</li>
+          <li>Day 2 帶組走進植物園「子曰中醫診所」</li>
+          <li>Day 5 陪伴學員籌備並完成成果發表</li>
+        </ul>
+      </div>
     </div>
-    <div class="goal-card">
-      <div class="goal-num">貳</div>
-      <p class="goal-layer">情意層面</p>
-      <p class="goal-name">親近文化 💛</p>
-      <p>培養對傳統文化的好奇心與親切感，激發學員自主閱讀經典的興趣，讓文化不再遙遠。</p>
+
+    <!-- 攝影健護勞務 -->
+    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(0,201,177,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(0,201,177,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,201,177,0.1)'">
+      <div style="background:linear-gradient(135deg,#00C9B1,#3A86FF);padding:1.5rem;color:#fff;">
+        <div style="font-size:2.2rem;margin-bottom:0.4rem;">📸</div>
+        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務二</div>
+        <div style="font-size:1.3rem;font-weight:900;">攝影 · 健護 · 勞務</div>
+        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">用鏡頭與行動，撐起整個營隊的後盾</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <span style="background:#CCFAF4;color:#008A7B;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 3–4 位</span>
+          <span style="background:#CCFAF4;color:#008A7B;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
+        </div>
+        <div style="font-size:0.78rem;font-weight:800;color:#008A7B;margin-bottom:0.4rem;">理想特質</div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">攝影技術佳，或體力、細心兼備。</p>
+        <div style="font-size:0.78rem;font-weight:800;color:#008A7B;margin-bottom:0.4rem;">工作內容</div>
+        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
+          <li>攝影：記錄五日課程花絮、活動側拍與結業典禮</li>
+          <li>健護：觀察學員身體狀況、基本傷口照護</li>
+          <li>勞務：場地佈置、物資搬運、報到引導</li>
+          <li>三項可依個人專長彈性分工、機動支援</li>
+        </ul>
+      </div>
     </div>
-    <div class="goal-card">
-      <div class="goal-num">參</div>
-      <p class="goal-layer">實踐層面</p>
-      <p class="goal-name">內化人格 🌟</p>
-      <p>透過分組合作、辯論與創作，將孔孟思想化為日常生活的行動指引，著重於人格塑造。</p>
+
+    <!-- 主講與場控 -->
+    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(255,107,53,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(255,107,53,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(255,107,53,0.1)'">
+      <div style="background:linear-gradient(135deg,#FF6B35,#FF8C5A);padding:1.5rem;color:#fff;">
+        <div style="font-size:2.2rem;margin-bottom:0.4rem;">🎙️</div>
+        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務三</div>
+        <div style="font-size:1.3rem;font-weight:900;">主講與場控</div>
+        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">課堂的節奏掌舵者</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <span style="background:#FFE5D9;color:#B84010;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 2 位</span>
+          <span style="background:#FFE5D9;color:#B84010;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
+        </div>
+        <div style="font-size:0.78rem;font-weight:800;color:var(--orange);margin-bottom:0.4rem;">理想特質</div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">反應靈活、口條清楚、台風穩健。</p>
+        <div style="font-size:0.78rem;font-weight:800;color:var(--orange);margin-bottom:0.4rem;">工作內容</div>
+        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
+          <li>課間銜接：開場、轉場、節目串場</li>
+          <li>帶領明信片彩繪、成語對對碰、古詩吟誦等活動</li>
+          <li>Day 5 擔任成果發表會主持與流程控管</li>
+          <li>與授課講師密切配合，協助教具準備</li>
+        </ul>
+      </div>
     </div>
+
+    <!-- 關主 -->
+    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(255,183,0,0.12);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(255,183,0,0.2)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(255,183,0,0.12)'">
+      <div style="background:linear-gradient(135deg,#FFB800,#FF8C5A);padding:1.5rem;color:#2D2926;">
+        <div style="font-size:2.2rem;margin-bottom:0.4rem;">🏛️</div>
+        <div style="font-size:0.7rem;font-weight:800;opacity:0.65;letter-spacing:0.15em;margin-bottom:0.2rem;">職務四</div>
+        <div style="font-size:1.3rem;font-weight:900;">六藝大地遊戲關主</div>
+        <div style="font-size:0.82rem;opacity:0.7;margin-top:0.25rem;">唯一單日場 · 孔廟漢服體驗日</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <span style="background:#FFF3CC;color:#8A6000;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 6 位</span>
+          <span style="background:#FFF3CC;color:#8A6000;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 單日 7/29</span>
+        </div>
+        <div style="font-size:0.78rem;font-weight:800;color:#8A6000;margin-bottom:0.4rem;">理想特質</div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">活潑反應靈活，熟悉中華文化尤佳。</p>
+        <div style="font-size:0.78rem;font-weight:800;color:#8A6000;margin-bottom:0.4rem;">工作內容</div>
+        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
+          <li>分守「禮、樂、射、御、書、數」六個關卡</li>
+          <li>向身著漢服的學員講解該藝文化意涵並執行闖關</li>
+          <li>全員著漢服，一起走入「一日小君子」古意空間</li>
+          <li>活動前提供腳本道具及行前說明</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- wave -->
-<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FDFFF5;">
-  <path d="M0,30 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#E8F6FF"/>
-</svg>
-
-<!-- SEL -->
-<section id="sel" style="background:#E8F6FF;padding:80px 5%;">
-  <div class="text-center fi">
-    <span class="sec-chip" style="background:#CCE9FF;color:#1A5FAD;">🧠 為什麼與眾不同</span>
-    <h2 class="sec-title" style="color:var(--blue);">傳統經典 × 社會情緒學習（SEL）</h2>
-    <p class="sec-desc">孔孟不只是古書——他們是兩千年前最懂 SEL 的大師</p>
-  </div>
-
-  <!-- 主文案 -->
-  <div class="fi" style="max-width:760px;margin:0 auto 3rem;background:#fff;border-radius:var(--card-r);padding:2.5rem;box-shadow:0 4px 20px rgba(58,134,255,0.08);">
-    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
-      在這個「一睜開眼就被訊息轟炸」的時代，孩子的手機裡刷不完短影音，心裡卻塞滿了比較與焦慮。
-    </p>
-    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
-      大家都想知道怎麼幫孩子安頓身心，這才讓「社會情緒學習」成了現在最受重視的話題。但其實，兩千多年前的孔子與孟子，根本就是這方面的古董級大師！他們不談生硬的理論，只聊最貼心的日常——怎麼與自己好好相處、怎麼看待身邊的人，以及你想過上什麼樣的人生。
-    </p>
-    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
-      這一次，我們要把死板板的課文留給過去！帶孩子跨出教室，踏進孔廟、走讀植物園、動手玩創作。
-    </p>
-    <p style="font-size:1.02rem;font-weight:800;color:var(--blue);line-height:2;">
-      我們不教死記硬背的古人古事，而是要陪孩子在體驗中真正練習：覺察自我、好好感受、自信表達！
-    </p>
-  </div>
-
-  <!-- SEL 五大核心能力 -->
-  <div class="fi" style="max-width:760px;margin:0 auto;">
-    <p style="text-align:center;font-size:0.78rem;font-weight:800;color:#1A5FAD;letter-spacing:0.15em;margin-bottom:1.25rem;">SEL 五大核心能力</p>
-    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-bottom:2rem;">
-      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🔍 自我覺察</span>
-      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">💚 情緒管理</span>
-      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🤝 人際合作</span>
-      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">⚖️ 負責任的決策</span>
-      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🎤 自信表達</span>
-    </div>
-    <div style="background:linear-gradient(135deg,#3A86FF,#00C9B1);border-radius:var(--card-r);padding:1.5rem 2rem;color:#fff;text-align:center;">
-      <p style="font-size:0.82rem;font-weight:800;opacity:0.85;letter-spacing:0.1em;margin-bottom:0.4rem;">政策背景</p>
-      <p style="font-size:0.95rem;font-weight:700;line-height:1.8;">2025 年教育部宣布將 SEL 精神納入十二年國教<br>中華孔孟學會率先以傳統經典呼應現代教育理論</p>
-    </div>
-  </div>
-</section>
-
-<!-- wave -->
-<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#E8F6FF;">
+<!-- wave: ROLES(#F5F0FF) → INFO(#FFB800) -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#F5F0FF;">
   <path d="M0,30 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#FFB800"/>
 </svg>
 
@@ -684,7 +720,7 @@ footer p { font-size: 0.85rem; line-height: 2; }
   </div>
 </section>
 
-<!-- wave -->
+<!-- wave: INFO(#FFB800) → SCHEDULE(#F5F0FF) -->
 <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FFB800;">
   <path d="M0,20 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F5F0FF"/>
 </svg>
@@ -855,7 +891,7 @@ footer p { font-size: 0.85rem; line-height: 2; }
 
 </section>
 
-<!-- wave -->
+<!-- wave: SCHEDULE(#F5F0FF) → FACULTY(#FFF8F5) -->
 <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#F5F0FF;">
   <path d="M0,40 C480,0 960,60 1440,20 L1440,60 L0,60 Z" fill="#FFF8F5"/>
 </svg>
@@ -899,7 +935,7 @@ footer p { font-size: 0.85rem; line-height: 2; }
   </div>
 </section>
 
-<!-- wave -->
+<!-- wave: FACULTY(#FFF8F5) → FEATURES(#F0FDFB) -->
 <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FFF8F5;">
   <path d="M0,20 C360,60 1080,10 1440,40 L1440,60 L0,60 Z" fill="#F0FDFB"/>
 </svg>
@@ -971,7 +1007,7 @@ footer p { font-size: 0.85rem; line-height: 2; }
   </div>
 </section>
 
-<!-- wave -->
+<!-- wave: FEATURES(#F0FDFB) → VENUES(#FFF5F0) -->
 <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#F0FDFB;">
   <path d="M0,40 C480,60 960,20 1440,50 L1440,60 L0,60 Z" fill="#FFF5F0"/>
 </svg>
@@ -1027,9 +1063,117 @@ footer p { font-size: 0.85rem; line-height: 2; }
   </div>
 </section>
 
-<!-- wave into FAQ -->
+<!-- PROBLEMS shares #FFF5F0 with VENUES — no wave divider needed -->
+
+<!-- PROBLEMS -->
+<section id="problems">
+  <div class="text-center fi">
+    <span class="sec-chip chip-orange">為何而做</span>
+    <h2 class="sec-title" style="color:var(--orange);">當代的三道文化困境 🤔</h2>
+    <p class="sec-desc">孔孟思想是華人文化的根，但在現代教育中，經典與孩子之間存在看不見的高牆。</p>
+  </div>
+  <div class="problems-grid fi">
+    <div class="prob-card">
+      <div class="prob-icon-wrap">📚</div>
+      <p class="prob-neg">經典 ≠ 童趣</p>
+      <p>《論語》《孟子》文字典雅，對國小生而言彷如天書，僅靠課本死背難以引發興趣。</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon-wrap">💬</div>
+      <p class="prob-neg">品德 ≠ 教條</p>
+      <p>傳統道德教育流於口號，孩子聽得多、感受得少，難以內化為真實的生活行動。</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon-wrap">🏮</div>
+      <p class="prob-neg">文化 ≠ 距離</p>
+      <p>孔孟思想是華人文化的根，若一代代失去親近感，珍貴的精神資產將逐漸流失。</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave: PROBLEMS(#FFF5F0) → GOALS(#FDFFF5) -->
 <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FFF5F0;">
-  <path d="M0,20 C360,55 1080,5 1440,35 L1440,60 L0,60 Z" fill="#F0F7FF"/>
+  <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#FDFFF5"/>
+</svg>
+
+<!-- GOALS -->
+<section id="goals">
+  <div class="text-center fi">
+    <span class="sec-chip chip-green">計畫目標</span>
+    <h2 class="sec-title" style="color:#2E8A4A;">知識 · 情意 · 實踐　三層並進 🚀</h2>
+    <p class="sec-desc">從認識到感受，從感受到行動——層遞式課程帶孩子真正走進經典世界。</p>
+  </div>
+  <div class="goals-grid fi">
+    <div class="goal-card">
+      <div class="goal-num">壹</div>
+      <p class="goal-layer">知識層面</p>
+      <p class="goal-name">認識經典 📖</p>
+      <p>認識孔子、孟子生平，藉由《論語》、《孟子》名言佳句，理解儒家核心概念：仁、義、禮、智。</p>
+    </div>
+    <div class="goal-card">
+      <div class="goal-num">貳</div>
+      <p class="goal-layer">情意層面</p>
+      <p class="goal-name">親近文化 💛</p>
+      <p>培養對傳統文化的好奇心與親切感，激發學員自主閱讀經典的興趣，讓文化不再遙遠。</p>
+    </div>
+    <div class="goal-card">
+      <div class="goal-num">參</div>
+      <p class="goal-layer">實踐層面</p>
+      <p class="goal-name">內化人格 🌟</p>
+      <p>透過分組合作、辯論與創作，將孔孟思想化為日常生活的行動指引，著重於人格塑造。</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave: GOALS(#FDFFF5) → SEL(#E8F6FF) -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#FDFFF5;">
+  <path d="M0,30 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#E8F6FF"/>
+</svg>
+
+<!-- SEL -->
+<section id="sel" style="background:#E8F6FF;padding:80px 5%;">
+  <div class="text-center fi">
+    <span class="sec-chip" style="background:#CCE9FF;color:#1A5FAD;">🧠 為什麼與眾不同</span>
+    <h2 class="sec-title" style="color:var(--blue);">傳統經典 × 社會情緒學習（SEL）</h2>
+    <p class="sec-desc">孔孟不只是古書——他們是兩千年前最懂 SEL 的大師</p>
+  </div>
+
+  <!-- 主文案 -->
+  <div class="fi" style="max-width:760px;margin:0 auto 3rem;background:#fff;border-radius:var(--card-r);padding:2.5rem;box-shadow:0 4px 20px rgba(58,134,255,0.08);">
+    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
+      在這個「一睜開眼就被訊息轟炸」的時代，孩子的手機裡刷不完短影音，心裡卻塞滿了比較與焦慮。
+    </p>
+    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
+      大家都想知道怎麼幫孩子安頓身心，這才讓「社會情緒學習」成了現在最受重視的話題。但其實，兩千多年前的孔子與孟子，根本就是這方面的古董級大師！他們不談生硬的理論，只聊最貼心的日常——怎麼與自己好好相處、怎麼看待身邊的人，以及你想過上什麼樣的人生。
+    </p>
+    <p style="font-size:1.02rem;color:var(--ink);line-height:2;margin-bottom:1.25rem;">
+      這一次，我們要把死板板的課文留給過去！帶孩子跨出教室，踏進孔廟、走讀植物園、動手玩創作。
+    </p>
+    <p style="font-size:1.02rem;font-weight:800;color:var(--blue);line-height:2;">
+      我們不教死記硬背的古人古事，而是要陪孩子在體驗中真正練習：覺察自我、好好感受、自信表達！
+    </p>
+  </div>
+
+  <!-- SEL 五大核心能力 -->
+  <div class="fi" style="max-width:760px;margin:0 auto;">
+    <p style="text-align:center;font-size:0.78rem;font-weight:800;color:#1A5FAD;letter-spacing:0.15em;margin-bottom:1.25rem;">SEL 五大核心能力</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-bottom:2rem;">
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🔍 自我覺察</span>
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">💚 情緒管理</span>
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🤝 人際合作</span>
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">⚖️ 負責任的決策</span>
+      <span style="background:#fff;border:2px solid #3A86FF;color:#1A5FAD;font-size:0.88rem;font-weight:800;padding:0.5em 1.2em;border-radius:100px;">🎤 自信表達</span>
+    </div>
+    <div style="background:linear-gradient(135deg,#3A86FF,#00C9B1);border-radius:var(--card-r);padding:1.5rem 2rem;color:#fff;text-align:center;">
+      <p style="font-size:0.82rem;font-weight:800;opacity:0.85;letter-spacing:0.1em;margin-bottom:0.4rem;">政策背景</p>
+      <p style="font-size:0.95rem;font-weight:700;line-height:1.8;">2025 年教育部宣布將 SEL 精神納入十二年國教<br>中華孔孟學會率先以傳統經典呼應現代教育理論</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave: SEL(#E8F6FF) → FAQ(#F0F7FF) -->
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#E8F6FF;">
+  <path d="M0,30 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#F0F7FF"/>
 </svg>
 
 <!-- FAQ -->
@@ -1130,148 +1274,10 @@ footer p { font-size: 0.85rem; line-height: 2; }
   </div>
 </section>
 
-<!-- wave into recruit -->
+<!-- wave: FAQ(#F0F7FF) → CONTACT(#2E1A6E) -->
 <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#F0F7FF;">
-  <path d="M0,30 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#1A1240"/>
+  <path d="M0,30 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#2E1A6E"/>
 </svg>
-
-<!-- RECRUIT HERO -->
-<section id="recruit" style="background:linear-gradient(145deg,#1A1240 0%,#2E1A6E 50%,#9B5DE5 100%);padding:80px 5% 60px;text-align:center;">
-  <div class="fi">
-    <span class="sec-chip" style="background:rgba(255,255,255,0.15);color:#E0CFFF;margin-bottom:1rem;">🎒 工讀人員招募</span>
-    <h2 style="font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:#fff;letter-spacing:0.1em;margin-bottom:0.75rem;">以青春陪伴經典</h2>
-    <p style="font-size:clamp(1rem,2.5vw,1.3rem);color:rgba(255,255,255,0.8);font-weight:700;margin-bottom:0.5rem;">把文化遞給下一代</p>
-    <p style="font-size:0.95rem;color:rgba(255,255,255,0.6);max-width:580px;margin:0 auto 2rem;line-height:1.8;">「孔孟小學堂」誠摯邀請大學生夥伴加入，活潑、細心、熱忱比經驗更重要。最低需求 16–18 位，分四類職務，長短期皆有。</p>
-    <div class="recruit-stats" style="display:inline-flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
-      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
-        <div style="font-size:2.2rem;font-weight:900;">16–18</div>
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">位工讀生需求</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
-        <div style="font-size:2.2rem;font-weight:900;">4</div>
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">類職務</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.12);border-radius:20px;padding:1rem 2rem;color:#fff;">
-        <div style="font-size:2.2rem;font-weight:900;">5日</div>
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;">7/27 – 7/31</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ROLES -->
-<section style="background:#F5F0FF;padding:80px 5%;">
-  <div class="text-center fi">
-    <span class="sec-chip chip-purple">職務介紹</span>
-    <h2 class="sec-title" style="color:var(--purple);">找到最適合你的位置 🌟</h2>
-    <p class="sec-desc">四類職務，各有特色，歡迎依照自己的專長與興趣選擇報名。</p>
-  </div>
-
-  <!-- 職務卡片 grid -->
-  <div id="roles-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto;">
-
-    <!-- 隊輔 -->
-    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(155,93,229,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(155,93,229,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(155,93,229,0.1)'">
-      <div style="background:linear-gradient(135deg,#9B5DE5,#B47FFF);padding:1.5rem;color:#fff;">
-        <div style="font-size:2.2rem;margin-bottom:0.4rem;">👥</div>
-        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務一</div>
-        <div style="font-size:1.3rem;font-weight:900;">隊輔</div>
-        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">小君子們最親近的大哥哥、大姊姊</div>
-      </div>
-      <div style="padding:1.5rem;">
-        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
-          <span style="background:#EDE0FF;color:#6A3DB8;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 5–6 位</span>
-          <span style="background:#EDE0FF;color:#6A3DB8;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
-        </div>
-        <div style="font-size:0.78rem;font-weight:800;color:var(--purple);margin-bottom:0.4rem;">理想特質</div>
-        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">活潑開朗、反應靈活，熱忱比經驗更重要。</p>
-        <div style="font-size:0.78rem;font-weight:800;color:var(--purple);margin-bottom:0.4rem;">工作內容</div>
-        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
-          <li>全程帶領分組學員，協助課程進行與秩序維持</li>
-          <li>引導分組合作、辯論、文字創作等活動</li>
-          <li>Day 2 帶組走進植物園「子曰中醫診所」</li>
-          <li>Day 5 陪伴學員籌備並完成成果發表</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 攝影健護勞務 -->
-    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(0,201,177,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(0,201,177,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,201,177,0.1)'">
-      <div style="background:linear-gradient(135deg,#00C9B1,#3A86FF);padding:1.5rem;color:#fff;">
-        <div style="font-size:2.2rem;margin-bottom:0.4rem;">📸</div>
-        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務二</div>
-        <div style="font-size:1.3rem;font-weight:900;">攝影 · 健護 · 勞務</div>
-        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">用鏡頭與行動，撐起整個營隊的後盾</div>
-      </div>
-      <div style="padding:1.5rem;">
-        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
-          <span style="background:#CCFAF4;color:#008A7B;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 3–4 位</span>
-          <span style="background:#CCFAF4;color:#008A7B;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
-        </div>
-        <div style="font-size:0.78rem;font-weight:800;color:#008A7B;margin-bottom:0.4rem;">理想特質</div>
-        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">攝影技術佳，或體力、細心兼備。</p>
-        <div style="font-size:0.78rem;font-weight:800;color:#008A7B;margin-bottom:0.4rem;">工作內容</div>
-        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
-          <li>攝影：記錄五日課程花絮、活動側拍與結業典禮</li>
-          <li>健護：觀察學員身體狀況、基本傷口照護</li>
-          <li>勞務：場地佈置、物資搬運、報到引導</li>
-          <li>三項可依個人專長彈性分工、機動支援</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 主講與場控 -->
-    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(255,107,53,0.1);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(255,107,53,0.18)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(255,107,53,0.1)'">
-      <div style="background:linear-gradient(135deg,#FF6B35,#FF8C5A);padding:1.5rem;color:#fff;">
-        <div style="font-size:2.2rem;margin-bottom:0.4rem;">🎙️</div>
-        <div style="font-size:0.7rem;font-weight:800;opacity:0.8;letter-spacing:0.15em;margin-bottom:0.2rem;">職務三</div>
-        <div style="font-size:1.3rem;font-weight:900;">主講與場控</div>
-        <div style="font-size:0.82rem;opacity:0.85;margin-top:0.25rem;">課堂的節奏掌舵者</div>
-      </div>
-      <div style="padding:1.5rem;">
-        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
-          <span style="background:#FFE5D9;color:#B84010;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 2 位</span>
-          <span style="background:#FFE5D9;color:#B84010;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 全程五日</span>
-        </div>
-        <div style="font-size:0.78rem;font-weight:800;color:var(--orange);margin-bottom:0.4rem;">理想特質</div>
-        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">反應靈活、口條清楚、台風穩健。</p>
-        <div style="font-size:0.78rem;font-weight:800;color:var(--orange);margin-bottom:0.4rem;">工作內容</div>
-        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
-          <li>課間銜接：開場、轉場、節目串場</li>
-          <li>帶領明信片彩繪、成語對對碰、古詩吟誦等活動</li>
-          <li>Day 5 擔任成果發表會主持與流程控管</li>
-          <li>與授課講師密切配合，協助教具準備</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 關主 -->
-    <div class="fi" style="background:#fff;border-radius:var(--card-r);overflow:hidden;box-shadow:0 4px 20px rgba(255,183,0,0.12);transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 14px 36px rgba(255,183,0,0.2)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(255,183,0,0.12)'">
-      <div style="background:linear-gradient(135deg,#FFB800,#FF8C5A);padding:1.5rem;color:#2D2926;">
-        <div style="font-size:2.2rem;margin-bottom:0.4rem;">🏛️</div>
-        <div style="font-size:0.7rem;font-weight:800;opacity:0.65;letter-spacing:0.15em;margin-bottom:0.2rem;">職務四</div>
-        <div style="font-size:1.3rem;font-weight:900;">六藝大地遊戲關主</div>
-        <div style="font-size:0.82rem;opacity:0.7;margin-top:0.25rem;">唯一單日場 · 孔廟漢服體驗日</div>
-      </div>
-      <div style="padding:1.5rem;">
-        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
-          <span style="background:#FFF3CC;color:#8A6000;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">👤 6 位</span>
-          <span style="background:#FFF3CC;color:#8A6000;font-size:0.72rem;font-weight:800;padding:0.25em 0.8em;border-radius:100px;">📅 單日 7/29</span>
-        </div>
-        <div style="font-size:0.78rem;font-weight:800;color:#8A6000;margin-bottom:0.4rem;">理想特質</div>
-        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">活潑反應靈活，熟悉中華文化尤佳。</p>
-        <div style="font-size:0.78rem;font-weight:800;color:#8A6000;margin-bottom:0.4rem;">工作內容</div>
-        <ul style="font-size:0.83rem;color:var(--muted);line-height:1.85;padding-left:1.1em;">
-          <li>分守「禮、樂、射、御、書、數」六個關卡</li>
-          <li>向身著漢服的學員講解該藝文化意涵並執行闖關</li>
-          <li>全員著漢服，一起走入「一日小君子」古意空間</li>
-          <li>活動前提供腳本道具及行前說明</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- CONTACT -->
 <section style="background:linear-gradient(135deg,#2E1A6E,#9B5DE5);padding:70px 5%;text-align:center;">
@@ -1291,7 +1297,7 @@ footer p { font-size: 0.85rem; line-height: 2; }
   </div>
 </section>
 
-<!-- wave into footer -->
+<!-- wave: CONTACT(#9B5DE5) → FOOTER(#2D2926) -->
 <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#9B5DE5;">
   <path d="M0,20 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="#2D2926"/>
 </svg>
